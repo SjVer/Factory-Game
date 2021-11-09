@@ -1,0 +1,13 @@
+Godot Engine v3.3.stable.custom_build.8e68f2e5f - https://godotengine.org
+OpenGL ES 2.0 Renderer: llvmpipe (LLVM 9.0.1, 128 bits)
+OpenGL ES Batching: ON
+/lib/arm-linux-gnueabihf/libpulse.so.0: undefined symbol: pa_threaded_mainloop_once_unlocked
+/lib/arm-linux-gnueabihf/libpulse.so.0: undefined symbol: pa_thread_make_realtime
+ 
+Project is missing: /home/sjoerdv/Coding/Godot/misc./c# test/project.godot
+Project is missing: /home/sjoerdv/Coding/Godot/Tile Test/project.godot
+Editing project: /home/sjoerdv/Coding/Godot/Factory-Game/startup (::home::sjoerdv::Coding::Godot::Factory-Game::startup)
+Godot Engine v3.3.stable.custom_build.8e68f2e5f - https://godotengine.org
+Godot Engine v3.3.stable.custom_build.8e68f2e5f - https://godotengine.org
+/lib/arm-linux-gnueabihf/libpulse.so.0: undefined symbol: pa_threaded_mainloop_once_unlocked
+/lib/arm-linux-gnueabihf/libpulse.so.0: undefined symbol: pa_thread_make_realtime
