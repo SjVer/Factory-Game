@@ -3,6 +3,8 @@ extends Control
 export(float, 0, 10) var fade_time = 1.0
 export(float, 0, 10) var sleep_time = 2.0
 
+export(PackedScene) var next_scene
+
 const BTSPLSH_1_FADING_IN 	= 1
 const BTSPLSH_1_SLEEPING 	= 2
 const BTSPLSH_1_FADING_OUT 	= 3
@@ -48,4 +50,9 @@ func _on_timer_timeout():
 
 func end():
 	print("bootsplash done")
-	$Bootsplashblank.modulate.a = 0
+	# $Bootsplashblank.modulate.a = 0
+	var _retval = get_tree().change_scene_to(next_scene)
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		end()

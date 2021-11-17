@@ -12,15 +12,37 @@ config_version=4
 
 config/name="Factory Game"
 run/main_scene="res://scenes/startup/Startup.tscn"
-boot_splash/image="res://scenes/startup/bootsplashblank.png"
+boot_splash/image="res://assets/bootsplash/bootsplashblank.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://assets/img/icon/icon_simple.png"
+config/version="0.0.1"
+
+[autoload]
+
+Debug="*res://singletons/Debug.gd"
+BackgroundControl="*res://singletons/BackgroundControl.gd"
 
 [display]
 
-window/handheld/orientation="sensor"
+window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+
+[filesystem]
+
+saving/settings_path="user://settings.json"
+
+[input]
+
+Debug_RotateScreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777244,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
@@ -32,3 +54,6 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
+2d/stretch/aspect="expand"
+2d/stretch/mode="2d"
+2d/icon="res://icon.png"

@@ -1,0 +1,66 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.807843, 0.223529, 0.223529, 1 )
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.352941, 0.12549, 0.12549, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.694118, 0.184314, 0.184314, 1 )
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.537255, 0.152941, 0.152941, 1 )
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.537255, 0.152941, 0.152941, 1 )
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0, 0, 0, 0 )
+
+[resource]
+resource_name = "default theme"
+default_font = ExtResource( 1 )
+Button/constants/hseparation = 5
+Button/styles/disabled = SubResource( 5 )
+Button/styles/focus = SubResource( 7 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+CheckBox/constants/hseparation = 10
+Panel/styles/panel = SubResource( 8 )

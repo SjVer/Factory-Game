@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bootsplash1.png-5c3131ad539217dd18830b2b579c6ac6.stex"
+path="res://.import/icon_adaptive_foreground.png-9caf1846ed6e8296f776192667706bef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/startup/bootsplash1.png"
-dest_files=[ "res://.import/bootsplash1.png-5c3131ad539217dd18830b2b579c6ac6.stex" ]
+source_file="res://assets/img/icon/icon_adaptive_foreground.png"
+dest_files=[ "res://.import/icon_adaptive_foreground.png-9caf1846ed6e8296f776192667706bef.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
