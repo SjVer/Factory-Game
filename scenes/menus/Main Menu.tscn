@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/Notalot60.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/theme/theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/menus/Main Menu.gd" type="Script" id=3]
 [ext_resource path="res://scenes/menus/Options Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/menus/New Game Menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/menus/Load Game Menu.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -20,6 +22,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+load_game_scene = ExtResource( 6 )
+new_game_scene = ExtResource( 5 )
 options_scene = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -64,5 +68,7 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Exit"
 
+[connection signal="pressed" from="VBoxContainer/ButtonLoadGame" to="." method="_on_ButtonLoadGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]

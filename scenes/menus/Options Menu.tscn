@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/Options Menu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.694118, 0.184314, 0.184314, 1 )
+border_width_right = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [node name="Root" type="MarginContainer"]
 anchor_right = 1.0
@@ -34,43 +43,94 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" type="VBoxContainer" parent="Panel"]
+[node name="Options" type="HBoxContainer" parent="Panel"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 30.0
 margin_top = -104.0
-margin_right = 400.0
+margin_right = 824.0
 margin_bottom = 104.0
+custom_constants/separation = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L" type="VBoxContainer" parent="Panel/Options"]
+margin_right = 300.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 300, 0 )
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox1" type="CheckBox" parent="Panel/Options"]
-margin_right = 370.0
-margin_bottom = 37.0
+[node name="Option1" type="CheckBox" parent="Panel/Options/L"]
+margin_right = 300.0
+margin_bottom = 38.0
 text = "Option 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox2" type="CheckBox" parent="Panel/Options"]
-margin_top = 57.0
-margin_right = 370.0
-margin_bottom = 94.0
+[node name="Option2" type="CheckBox" parent="Panel/Options/L"]
+margin_top = 58.0
+margin_right = 300.0
+margin_bottom = 96.0
 text = "Option 2"
 
-[node name="CheckBox3" type="CheckBox" parent="Panel/Options"]
-margin_top = 114.0
-margin_right = 370.0
-margin_bottom = 151.0
-text = "Option 3"
+[node name="Sound" type="VBoxContainer" parent="Panel/Options/L"]
+margin_top = 116.0
+margin_right = 300.0
+margin_bottom = 169.0
+theme = ExtResource( 1 )
+custom_constants/separation = 3
 
-[node name="CheckBox4" type="CheckBox" parent="Panel/Options"]
-margin_top = 171.0
-margin_right = 370.0
-margin_bottom = 208.0
-text = "Option 4"
+[node name="Label" type="Label" parent="Panel/Options/L/Sound"]
+margin_right = 300.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 4 )
+text = "Sound"
+
+[node name="Slider" type="HSlider" parent="Panel/Options/L/Sound"]
+margin_top = 37.0
+margin_right = 300.0
+margin_bottom = 53.0
+theme = ExtResource( 1 )
+max_value = 1.0
+step = 0.01
+
+[node name="Music" type="VBoxContainer" parent="Panel/Options/L"]
+margin_top = 189.0
+margin_right = 300.0
+margin_bottom = 242.0
+theme = ExtResource( 1 )
+custom_constants/separation = 3
+
+[node name="Label" type="Label" parent="Panel/Options/L/Music"]
+margin_right = 300.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 4 )
+text = "Music"
+
+[node name="Slider" type="HSlider" parent="Panel/Options/L/Music"]
+margin_top = 37.0
+margin_right = 300.0
+margin_bottom = 53.0
+theme = ExtResource( 1 )
+max_value = 1.0
+step = 0.01
+
+[node name="R" type="VBoxContainer" parent="Panel/Options"]
+margin_left = 400.0
+margin_right = 700.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonBack" type="Button" parent="Panel"]
 anchor_left = 1.0
@@ -87,4 +147,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="Panel/Options/L/Option1" to="." method="_on_Option1_set"]
+[connection signal="pressed" from="Panel/Options/L/Option2" to="." method="_on_Option2_set"]
+[connection signal="value_changed" from="Panel/Options/L/Sound/Slider" to="." method="_on_Sound_set"]
+[connection signal="value_changed" from="Panel/Options/L/Music/Slider" to="." method="_on_Music_set"]
 [connection signal="pressed" from="Panel/ButtonBack" to="." method="_on_ButtonBack_pressed"]

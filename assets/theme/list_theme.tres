@@ -1,0 +1,57 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://assets/Notalot60.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 10.0
+bg_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 10.0
+bg_color = Color( 0.807843, 0.223529, 0.223529, 1 )
+border_color = Color( 0.352941, 0.12549, 0.12549, 1 )
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+bg_color = Color( 0.694118, 0.184314, 0.184314, 1 )
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 10.0
+bg_color = Color( 0.537255, 0.152941, 0.152941, 1 )
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.537255, 0.152941, 0.152941, 1 )
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 26
+extra_spacing_char = 2
+extra_spacing_space = 5
+font_data = ExtResource( 1 )
+
+[resource]
+resource_name = "list theme"
+default_font = SubResource( 15 )
+Button/constants/hseparation = 5
+Button/styles/disabled = SubResource( 5 )
+Button/styles/focus = SubResource( 7 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+ScrollContainer/styles/bg = SubResource( 16 )

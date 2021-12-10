@@ -15,12 +15,22 @@ run/main_scene="res://scenes/startup/Startup.tscn"
 boot_splash/image="res://assets/bootsplash/bootsplashblank.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/img/icon/icon_simple.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 config/version="0.0.1"
 
 [autoload]
 
-Debug="*res://singletons/Debug.gd"
-BackgroundControl="*res://singletons/BackgroundControl.gd"
+Settings="*res://singletons/Settings.gd"
+TmpVars="*res://singletons/TmpVars.gd"
+AudioHandler="*res://singletons/AudioHandler.gd"
+WorldGeneration="*res://singletons/WorldGeneration.gd"
+SaveHandler="*res://singletons/SaveHandler.gd"
+
+[debug]
+
+gdscript/completion/autocomplete_setters_and_getters=true
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
@@ -31,6 +41,7 @@ window/stretch/aspect="expand"
 [filesystem]
 
 saving/settings_path="user://settings.json"
+saving/save_directory="user://save"
 
 [input]
 
