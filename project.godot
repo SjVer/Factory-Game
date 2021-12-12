@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Chunk",
+"language": "GDScript",
+"path": "res://resources/chunk.gd"
+}, {
+"base": "Resource",
+"class": "SaveData",
+"language": "GDScript",
+"path": "res://resources/savedata.gd"
+} ]
+_global_script_class_icons={
+"Chunk": "",
+"SaveData": ""
+}
+
 [application]
 
 config/name="Factory Game"
@@ -68,3 +84,7 @@ environment/default_environment="res://default_env.tres"
 2d/stretch/aspect="expand"
 2d/stretch/mode="2d"
 2d/icon="res://icon.png"
+
+[world]
+
+chunk/size=64

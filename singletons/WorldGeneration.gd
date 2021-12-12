@@ -1,30 +1,30 @@
 extends Node
 
-# script to handle world generation related stuff
+func generate_chunk(_seed: int, x: int, y: int) -> Chunk:
+	return Chunk.new()
 
-func generate_new_world(world_name: String, world_seed: int) -> File:
+func generate_new_world(world_name: String, world_seed: int) -> SaveData:
 	var filename = ProjectSettings.get_setting("filesystem/saving/save_directory") + "/%s.json" % world_name
-	
-	var dict: Dictionary = {}
-	dict["version"] = ProjectSettings.get_setting("application/config/version")
-	dict["path"] = filename
-	dict["name"] = world_name
-	dict["seed"] = world_seed
-	dict["last_played"] = OS.get_unix_time()
-	dict["total_played"] = 0
+
+	var savedata: SaveData = SaveData.new()
+	savedata.version = ProjectSettings.get_setting("application/config/version")
+	savedata.path = filename
+	savedata.name = world_name
+	savedata.world_seed = world_seed
+	savedata.last_played = OS.get_unix_time()
+	savedata.total_played = 0
+	assert(savedata.is_valid(), "Generated savefile %s is invalid!" % world_name)
 
 	# ========= generation =========
-	#
-	#
+	
+	var first_chunk = generate_chunk(savedata.world_seed, 0, 0)
+	
+	for x in range(ProjectSettings.get_setting("world/chunk/size")):
+		for y in range(ProjectSettings.get_setting("world/chunk/size")):
+			first_chunk.set_slot(x, y, randi() % 4)
+
+	savedata.set_chunk(0, 0, first_chunk)
 	
 	# ========= save to file =========
 	
-	if not Directory.new().dir_exists(ProjectSettings.get_setting("filesystem/saving/save_directory")):
-		Directory.new().make_dir_recursive(ProjectSettings.get_setting("filesystem/saving/save_directory"))
-
-	var worldfile = File.new()
-	var _status = worldfile.open(filename, File.WRITE)
-	worldfile.store_string(JSON.print(dict, "\t"))
-	# worldfile.close()
-	
-	return worldfile
+	return savedata

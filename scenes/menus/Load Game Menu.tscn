@@ -260,6 +260,6 @@ text = "Are you sure?
 You cannot recover a deleted  save"
 
 [connection signal="pressed" from="Panel/ButtonBack" to="." method="_on_ButtonBack_pressed"]
-[connection signal="pressed" from="Panel/ButtonLoad" to="." method="_on_ButtonCreate_pressed"]
+[connection signal="pressed" from="Panel/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
 [connection signal="pressed" from="Panel/ButtonDelete" to="." method="_on_ButtonDelete_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/InfoPanel/Values/Seed/Copy" to="." method="_on_Copy_pressed"]

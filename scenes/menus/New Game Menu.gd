@@ -24,12 +24,12 @@ func _on_ButtonCreate_pressed():
 		if file["name"] == input_name.text:
 			$PopupAlreadyExists.normal_popup()
 			while $PopupAlreadyExists.state == $PopupAlreadyExists.popupState.PENDING: yield(get_tree(), "idle_frame")
-			
 			if $PopupAlreadyExists.state == $PopupAlreadyExists.popupState.CANCELLED: return
 
 	print("Creating world named '%s' with seed %d" % [input_name.text, int(input_seed.text)])
-	var newfile: File = WorldGeneration.generate_new_world(input_name.text, int(input_seed.text))
-	print("Saved to %s" % newfile.get_path())
+	var savedata: SaveData = WorldGeneration.generate_new_world(input_name.text, int(input_seed.text))
+	SaveHandler.save(savedata)
+	print("Saved to %s" % savedata.path)
 		
 func _on_Seed_changed(new_text):
 	# validate seed (only numbers)
