@@ -21,7 +21,9 @@ func generate_new_world(world_name: String, world_seed: int) -> SaveData:
 	
 	for x in range(ProjectSettings.get_setting("world/chunk/size")):
 		for y in range(ProjectSettings.get_setting("world/chunk/size")):
-			first_chunk.set_slot(x, y, randi() % 4)
+			first_chunk.set_slot(x, y, 0)
+
+	first_chunk.set_slot(0, 0, 1)
 
 	savedata.set_chunk(0, 0, first_chunk)
 	

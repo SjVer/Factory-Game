@@ -20,7 +20,13 @@ func from_dict(dict: Dictionary) -> SaveData:
 	name = dict["name"]
 	world_seed = dict["seed"]
 	last_played = dict["last_played"]
-	chunks = dict["chunks"]
+	chunks = {}
+
+	# load chunks
+	for coord in dict["chunks"]:
+		var key = Vector2(str2var("Vector2" + coord))
+		chunks[key] = Chunk.new().from_dict(dict["chunks"][coord])
+
 	return self
 
 func is_valid() -> bool:
@@ -36,8 +42,12 @@ func to_string() -> String:
 		"seed": world_seed,
 		"last_played": last_played,
 		"total_played": total_played,
-		"chunks": chunks
+		"chunks": {}
 	}
+	# save chunks
+	for coord in chunks:
+		dict["chunks"][coord] = chunks[coord].to_dict()
+
 	return JSON.print(dict, "\t")
 
 func set_chunk(x: int, y: int, chunk: Chunk):
