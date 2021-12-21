@@ -1,13 +1,14 @@
 extends Resource
 class_name SaveData
 
-export(String) var version = ProjectSettings.get_setting("application/config/version")
-export(String, FILE, "*.json") var path
-export(String) var name
-export(int) var world_seed
-export(int) var last_played
-export(int) var total_played
+var version: String = ProjectSettings.get_setting("application/config/version")
+var path: String
+var name: String
+var world_seed: int
+var last_played: int
+var total_played: int
 
+var player_pos: Vector2
 var chunks: Dictionary = {}
 
 func _init():
@@ -20,6 +21,9 @@ func from_dict(dict: Dictionary) -> SaveData:
 	name = dict["name"]
 	world_seed = dict["seed"]
 	last_played = dict["last_played"]
+	total_played = dict["total_played"]
+
+	player_pos = Vector2(str2var("Vector2" + dict["player_pos"]))
 	chunks = {}
 
 	# load chunks
@@ -42,6 +46,7 @@ func to_string() -> String:
 		"seed": world_seed,
 		"last_played": last_played,
 		"total_played": total_played,
+		"player_pos": player_pos,
 		"chunks": {}
 	}
 	# save chunks
@@ -49,6 +54,9 @@ func to_string() -> String:
 		dict["chunks"][coord] = chunks[coord].to_dict()
 
 	return JSON.print(dict, "\t")
+
+func update_total_played(mins: int):
+	total_played += int(mins)
 
 func set_chunk(x: int, y: int, chunk: Chunk):
 	# sets a chunk

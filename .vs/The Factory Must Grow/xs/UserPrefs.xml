@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{8DB9DF3A-1E53-4F27-9177-126A0F5E14A8}|Play in Editor">
+  <MonoDevelop.Ide.ItemProperties.Factory_220Game PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="entities/Entity.cs">
+    <Files>
+      <File FileName="entities/Entity.cs" Line="39" Column="23" />
+      <File FileName="entities/LogisticsEntity.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="The Factory Must Grow" expanded="True">
+            <Node name="The Factory Must Grow" expanded="True">
+              <Node name="entities" expanded="True">
+                <Node name="Entity.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

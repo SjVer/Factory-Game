@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/img/grabber.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/grabber_disabled.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.333333, 0.105882, 0.105882, 1 )
@@ -107,6 +109,9 @@ Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 CheckBox/constants/hseparation = 10
+HSlider/icons/grabber = ExtResource( 3 )
+HSlider/icons/grabber_disabled = ExtResource( 4 )
+HSlider/icons/grabber_highlight = ExtResource( 3 )
 HSlider/styles/grabber_area = SubResource( 9 )
 HSlider/styles/grabber_area_highlight = SubResource( 9 )
 HSlider/styles/slider = SubResource( 10 )

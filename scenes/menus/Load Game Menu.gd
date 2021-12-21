@@ -50,7 +50,7 @@ func on_save_clicked(save: SaveData):
 	var dt = OS.get_datetime_from_unix_time(local_timestamp)
 	last_played_label.text = "%02d:%02d %02d/%02d/'%02d" % [dt["hour"], dt["minute"], dt["day"], dt["month"], dt["year"] - 2000]
 	
-	total_time_label.text = "%dh %dm" % [save.total_played / 60, int(save.total_played) % 60]
+	total_time_label.text = "%dh %dm" % [int(save.total_played / 60), int(save.total_played) % 60]
 
 func _on_Copy_pressed():
 	print("copying seed %d" % selected_save.world_seed)
@@ -82,11 +82,12 @@ func _on_ButtonLoad_pressed():
 # cancelling stuff
 func _on_ButtonBack_pressed():
 	back()
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		back()
-
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		back()
 func back():
 	# go to main menu
 	var scene: PackedScene = load(back_scene_path)

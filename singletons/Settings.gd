@@ -4,10 +4,11 @@ extends Node
 onready var savefile: File = File.new()
 
 # options
-var option_1: bool
-var option_2: bool
+var gamepad_style: int
+var show_gamepad: bool
 var music: float
 var sound: float
+var zoom: float
 
 # functions
 func _ready(): self.load()
@@ -18,10 +19,11 @@ func to_dict() -> Dictionary:
 	var dict: Dictionary = {}
 	dict["version"] = ProjectSettings.get_setting("application/config/version")
 
-	dict["option_1"] = option_1
-	dict["option_2"] = option_2
+	dict["gamepad_style"] = gamepad_style
+	dict["show_gamepad"] = show_gamepad
 	dict["sound"] = sound
 	dict["music"] = music
+	dict["zoom"] = zoom
 
 	return dict
 
@@ -47,9 +49,10 @@ func load():
 		defaultfile.close()
 
 	# set options
-	option_1 = dict["option_1"]
-	option_2 = dict["option_2"]
+	gamepad_style = dict["gamepad_style"]
+	show_gamepad = dict["show_gamepad"]
 	sound = dict["sound"]
 	music = dict["music"]
+	zoom = dict["zoom"]
 
 	print("Settings loaded" if not defaulted else "Settings outdated or corrupted. Loaded default settings")

@@ -6,10 +6,10 @@ export(PackedScene) var new_game_scene
 export(PackedScene) var options_scene
 
 # buttons
-onready var button_load_game: Button = $VBoxContainer/ButtonLoadGame
-onready var button_new_game	: Button = $VBoxContainer/ButtonNewGame
-onready var button_options	: Button = $VBoxContainer/ButtonOptions
-onready var button_quit		: Button = $VBoxContainer/ButtonQuit
+onready var button_load_game: Button = $VBoxContainer/VBoxContainer/ButtonLoadGame
+onready var button_new_game	: Button = $VBoxContainer/VBoxContainer/ButtonNewGame
+onready var button_options	: Button = $VBoxContainer/VBoxContainer/ButtonOptions
+onready var button_quit		: Button = $VBoxContainer/VBoxContainer/ButtonQuit
 
 func _on_ButtonLoadGame_pressed():
 	var _retval = get_tree().change_scene_to(load_game_scene)

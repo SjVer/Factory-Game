@@ -1,6 +1,7 @@
 {
-    "option_1": true,
-    "option_2": false,
+    "gamepad_style": 0,
+    "show_gamepad": true,
     "sound": 0.50,
-    "music": 0.50
+    "music": 0.50,
+    "zoom": 0.4
 }

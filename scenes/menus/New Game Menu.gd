@@ -28,8 +28,26 @@ func _on_ButtonCreate_pressed():
 
 	print("Creating world named '%s' with seed %d" % [input_name.text, int(input_seed.text)])
 	var savedata: SaveData = WorldGeneration.generate_new_world(input_name.text, int(input_seed.text))
+	
+	# find center of first chunk
+	var worldScene: Node = load("res://scenes/gameplay/World.tscn").instance()
+	var chunksize = ProjectSettings.get_setting("world/chunk/size")
+	var tilemap = worldScene.get_node("World/TileMap")
+	# savedata.player_pos = Vector2(
+	# 	chunksize * tilemap.cell_size.x * tilemap.scale.x / 2,
+	# 	chunksize * tilemap.cell_size.y * tilemap.scale.y / 2
+	# )
+	savedata.player_pos = tilemap.cell_size * tilemap.scale * chunksize / 2
+
 	SaveHandler.save(savedata)
 	print("Saved to %s" % savedata.path)
+
+	# load the World scene and make it load the selected save file
+	worldScene.preload_save(savedata)
+	var root = get_tree().get_root()
+	root.get_child(root.get_child_count() - 1).queue_free()
+	root.add_child(worldScene)
+	get_tree().set_current_scene(worldScene)
 		
 func _on_Seed_changed(new_text):
 	# validate seed (only numbers)
@@ -52,11 +70,12 @@ func _on_Reset_pressed():
 # cancelling stuff
 func _on_ButtonCancel_pressed():
 	back()
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		back()
-
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		back()
 func back():
 	# go to main menu
 	var scene: PackedScene = load(back_scene_path)

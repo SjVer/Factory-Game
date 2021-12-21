@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/sjoerd/Coding/Godot/Factory-Game/The Factory Must Grow.csproj": {}
+  },
+  "projects": {
+    "/home/sjoerd/Coding/Godot/Factory-Game/The Factory Must Grow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/sjoerd/Coding/Godot/Factory-Game/The Factory Must Grow.csproj",
+        "projectName": "The Factory Must Grow",
+        "projectPath": "/home/sjoerd/Coding/Godot/Factory-Game/The Factory Must Grow.csproj",
+        "packagesPath": "/home/sjoerd/.nuget/packages/",
+        "outputPath": "/home/sjoerd/Coding/Godot/Factory-Game/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sjoerd/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

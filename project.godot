@@ -26,14 +26,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Factory Game"
+config/name="The Factory Must Grow"
 run/main_scene="res://scenes/startup/Startup.tscn"
 boot_splash/image="res://assets/bootsplash/bootsplashblank.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/img/icon/icon_simple.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
-config/version="0.0.1"
+config/version="0.0.2"
 
 [autoload]
 
@@ -54,6 +54,10 @@ window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
 [filesystem]
 
 saving/settings_path="user://settings.json"
@@ -61,9 +65,42 @@ saving/save_directory="user://save"
 
 [input]
 
-Debug_RotateScreen={
+ui_left={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777244,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_zoom_in={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_zoom_out={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
@@ -77,9 +114,9 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
 2d/stretch/aspect="expand"
 2d/stretch/mode="2d"

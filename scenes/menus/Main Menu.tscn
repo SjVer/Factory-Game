@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Notalot60.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/theme/theme.tres" type="Theme" id=2]
@@ -6,6 +6,15 @@
 [ext_resource path="res://scenes/menus/Options Menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/menus/New Game Menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/menus/Load Game Menu.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 61
+outline_color = Color( 0.537255, 0.152941, 0.152941, 1 )
+extra_spacing_top = 2
+extra_spacing_bottom = 2
+extra_spacing_char = 2
+extra_spacing_space = 5
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -27,24 +36,39 @@ new_game_scene = ExtResource( 5 )
 options_scene = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+theme = ExtResource( 2 )
+custom_constants/separation = 46
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 197.0
+custom_fonts/font = SubResource( 2 )
+text = "The Factory Must Grow"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_left = 415.0
-margin_top = 181.0
+margin_top = 243.0
 margin_right = 608.0
-margin_bottom = 418.0
+margin_bottom = 480.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 2 )
 custom_constants/separation = 15
 alignment = 1
 
-[node name="ButtonLoadGame" type="Button" parent="VBoxContainer"]
+[node name="ButtonLoadGame" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_right = 193.0
 margin_bottom = 48.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Load Game"
 
-[node name="ButtonNewGame" type="Button" parent="VBoxContainer"]
+[node name="ButtonNewGame" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 63.0
 margin_right = 193.0
 margin_bottom = 111.0
@@ -52,7 +76,7 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "New Game"
 
-[node name="ButtonOptions" type="Button" parent="VBoxContainer"]
+[node name="ButtonOptions" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 126.0
 margin_right = 193.0
 margin_bottom = 174.0
@@ -60,7 +84,7 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Options"
 
-[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+[node name="ButtonQuit" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 189.0
 margin_right = 193.0
 margin_bottom = 237.0
@@ -68,7 +92,7 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/ButtonLoadGame" to="." method="_on_ButtonLoadGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ButtonLoadGame" to="." method="_on_ButtonLoadGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]

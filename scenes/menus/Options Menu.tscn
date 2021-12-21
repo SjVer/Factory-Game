@@ -1,7 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/Options Menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/Notalot60.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.694118, 0.184314, 0.184314, 1 )
+border_width_right = 4
+border_color = Color( 0.333333, 0.105882, 0.105882, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+extra_spacing_top = 2
+extra_spacing_bottom = 1
+extra_spacing_char = 2
+extra_spacing_space = 5
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.694118, 0.184314, 0.184314, 1 )
@@ -57,31 +75,45 @@ __meta__ = {
 
 [node name="L" type="VBoxContainer" parent="Panel/Options"]
 margin_right = 300.0
-margin_bottom = 242.0
+margin_bottom = 282.0
 rect_min_size = Vector2( 300, 0 )
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option1" type="CheckBox" parent="Panel/Options/L"]
+[node name="GamePad" type="VBoxContainer" parent="Panel/Options/L"]
 margin_right = 300.0
-margin_bottom = 38.0
-text = "Option 1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+custom_constants/separation = 7
 
-[node name="Option2" type="CheckBox" parent="Panel/Options/L"]
-margin_top = 58.0
+[node name="Label" type="Label" parent="Panel/Options/L/GamePad"]
 margin_right = 300.0
-margin_bottom = 96.0
-text = "Option 2"
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 6 )
+text = "Gamepad style"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/Options/L/GamePad"]
+margin_top = 41.0
+margin_right = 300.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
+text = "Joystick"
+items = [ "Joystick", null, false, 0, null, "D-Pad", null, false, 1, null ]
+selected = 0
+
+[node name="ShowGamepad" type="CheckBox" parent="Panel/Options/L"]
+margin_top = 92.0
+margin_right = 300.0
+margin_bottom = 130.0
+text = "Show Gamepad"
 
 [node name="Sound" type="VBoxContainer" parent="Panel/Options/L"]
-margin_top = 116.0
+margin_top = 150.0
 margin_right = 300.0
-margin_bottom = 169.0
+margin_bottom = 206.0
 theme = ExtResource( 1 )
 custom_constants/separation = 3
 
@@ -95,15 +127,15 @@ text = "Sound"
 [node name="Slider" type="HSlider" parent="Panel/Options/L/Sound"]
 margin_top = 37.0
 margin_right = 300.0
-margin_bottom = 53.0
+margin_bottom = 56.0
 theme = ExtResource( 1 )
 max_value = 1.0
 step = 0.01
 
 [node name="Music" type="VBoxContainer" parent="Panel/Options/L"]
-margin_top = 189.0
+margin_top = 226.0
 margin_right = 300.0
-margin_bottom = 242.0
+margin_bottom = 282.0
 theme = ExtResource( 1 )
 custom_constants/separation = 3
 
@@ -117,7 +149,7 @@ text = "Music"
 [node name="Slider" type="HSlider" parent="Panel/Options/L/Music"]
 margin_top = 37.0
 margin_right = 300.0
-margin_bottom = 53.0
+margin_bottom = 56.0
 theme = ExtResource( 1 )
 max_value = 1.0
 step = 0.01
@@ -125,12 +157,33 @@ step = 0.01
 [node name="R" type="VBoxContainer" parent="Panel/Options"]
 margin_left = 400.0
 margin_right = 700.0
-margin_bottom = 242.0
+margin_bottom = 282.0
 rect_min_size = Vector2( 300, 0 )
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Zoom" type="VBoxContainer" parent="Panel/Options/R"]
+margin_right = 300.0
+margin_bottom = 56.0
+theme = ExtResource( 1 )
+custom_constants/separation = 3
+
+[node name="Label" type="Label" parent="Panel/Options/R/Zoom"]
+margin_right = 300.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 4 )
+text = "Zoom Speed (scroll)"
+
+[node name="Slider" type="HSlider" parent="Panel/Options/R/Zoom"]
+margin_top = 37.0
+margin_right = 300.0
+margin_bottom = 56.0
+theme = ExtResource( 1 )
+max_value = 1.0
+step = 0.01
 
 [node name="ButtonBack" type="Button" parent="Panel"]
 anchor_left = 1.0
@@ -147,8 +200,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Panel/Options/L/Option1" to="." method="_on_Option1_set"]
-[connection signal="pressed" from="Panel/Options/L/Option2" to="." method="_on_Option2_set"]
+[connection signal="item_selected" from="Panel/Options/L/GamePad/OptionButton" to="." method="_on_OptionGamepadStyle_set"]
+[connection signal="pressed" from="Panel/Options/L/ShowGamepad" to="." method="_on_ShowGamepad_set"]
 [connection signal="value_changed" from="Panel/Options/L/Sound/Slider" to="." method="_on_Sound_set"]
 [connection signal="value_changed" from="Panel/Options/L/Music/Slider" to="." method="_on_Music_set"]
+[connection signal="value_changed" from="Panel/Options/R/Zoom/Slider" to="." method="_on_Zoom_set"]
 [connection signal="pressed" from="Panel/ButtonBack" to="." method="_on_ButtonBack_pressed"]
