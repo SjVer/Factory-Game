@@ -1,5 +1,5 @@
 **/nohup.out
 builds/
 .import/
-.mono/
-.vs/
+.mono/**
+.vs/**
