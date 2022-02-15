@@ -1,10 +1,12 @@
+shell = /bin/bash
+
 default: build cp
 
 build:
 	 cd /home/sjoerd/Apps/Godot/Godot_v3.4-stable_mono_x11_64
 	 ./Godot_v3.4-stable_mono_x11.64 project.godot --export-debug Android
 cp:
-	cp builds/factory-game-android.apk ~/GoogleDrive/
+	cp exporting/builds/the-factory-must-grow.apk ~/GoogleDrive/
 
 .PHONY: version-up
 version-up:

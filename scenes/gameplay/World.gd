@@ -30,8 +30,9 @@ func _ready():
 	epoch = OS.get_unix_time()
 
 	# some temporary terrain
-	for x in range(ProjectSettings.get_setting("world/chunk/size")):
-		for y in range(ProjectSettings.get_setting("world/chunk/size")):
+	var size = ProjectSettings.get_setting("world/chunk/size")
+	for x in range(-size, size):
+		for y in range(-size, size):
 			$World/Ground.set_cell(x, y, 0)
 	
 func _physics_process(_delta):
@@ -52,7 +53,7 @@ func _on_tile_set_request(position: Vector2, clear: bool):
 		var rect = RectangleShape2D.new()
 		rect.extents = Vector2(16, 14)
 		
-		belt.ConfigAnimatedEntity("res://assets/sprites/entities/belt-1/belt-1-rf.png", [2, 2], 2, true)
+		belt.ConfigAnimatedEntity("res://assets/sprites/entities/belt-1/belt-1-rf.png", [2, 2], 1.5, true)
 		belt.Init($World/Ground)
 		belt.Coordinates = position
 		

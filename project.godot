@@ -64,6 +64,10 @@ enabled=PoolStringArray(  )
 saving/settings_path="user://settings.json"
 saving/save_directory="user://save"
 
+[global]
+
+chunk=false
+
 [input]
 
 ui_left={
