@@ -10,7 +10,6 @@ onready var zoom_factor = 0.99 - 0.49 * Settings.zoom
 
 func _ready():
 	set_process_unhandled_input(true)
-	print("zoom_factor: ", zoom_factor)
 
 func dist():
 	var first_event = null

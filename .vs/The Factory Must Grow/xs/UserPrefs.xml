@@ -1,9 +1,9 @@
-﻿<Properties StartupConfiguration="{8DB9DF3A-1E53-4F27-9177-126A0F5E14A8}|Play in Editor">
+﻿<Properties StartupConfiguration="{8DB9DF3A-1E53-4F27-9177-126A0F5E14A8}|Launch">
   <MonoDevelop.Ide.ItemProperties.Factory_220Game PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="entities/Entity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="entities/classes/Entity.cs">
     <Files>
-      <File FileName="entities/Entity.cs" Line="39" Column="23" />
-      <File FileName="entities/LogisticsEntity.cs" Line="1" Column="1" />
+      <File FileName="entities/EntityManager.cs" Line="38" Column="22" />
+      <File FileName="entities/classes/Entity.cs" Line="100" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,15 +11,21 @@
           <Node name="The Factory Must Grow" expanded="True">
             <Node name="The Factory Must Grow" expanded="True">
               <Node name="entities" expanded="True">
-                <Node name="Entity.cs" selected="True" />
+                <Node name="classes" expanded="True">
+                  <Node name="Entity.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.The_220Factory_220Must_220Grow PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

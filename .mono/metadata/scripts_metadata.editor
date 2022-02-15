@@ -1,1 +1,1 @@
-{"res://entities/Entity.cs":{"modified_time":"1640114347","class":{"namespace":"","class_name":"Entity","nested":false}},"res://entities/LogisticsEntity.cs":{"modified_time":"1640031749","class":{"namespace":"","class_name":"LogisticsEntity","nested":false}}}
+{"res://entities/EntityManager.cs":{"modified_time":"1644949092","class":{"namespace":"","class_name":"EntityManager","nested":false}},"res://entities/classes/Entity.cs":{"modified_time":"1644949363","class":{"namespace":"","class_name":"Entity","nested":false}}}

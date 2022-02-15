@@ -42,6 +42,7 @@ TmpVars="*res://singletons/TmpVars.gd"
 AudioHandler="*res://singletons/AudioHandler.gd"
 WorldGeneration="*res://singletons/WorldGeneration.gd"
 SaveHandler="*res://singletons/SaveHandler.gd"
+Synchronizer="*res://singletons/Synchronizer.gd"
 
 [debug]
 

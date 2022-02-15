@@ -33,14 +33,17 @@ func _input(event):
 	if incomingPointer == INACTIVE_IDX:
 		return
 	
+		
 	if need2ChangeActivePointer(event):
 		if (currentPointerIDX != incomingPointer) and event.is_pressed():
 			currentPointerIDX = incomingPointer;
-			showAtPos(Vector2(event.position.x, event.position.y));
-
+		showAtPos(Vector2(event.position.x, event.position.y));
+		get_tree().set_input_as_handled()
+			
 	var theSamePointer = currentPointerIDX == incomingPointer
 	if isActive() and theSamePointer:
 		process_input(event)
+		get_tree().set_input_as_handled()
 
 func need2ChangeActivePointer(event): #touch down inside analog	
 	if event is InputEventMouseButton or event is InputEventScreenTouch:

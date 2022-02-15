@@ -1,3 +1,18 @@
 {
-    "godot_tools.editor_path": "/home/sjoerd/Apps/Godot/Godot_v3.4-stable_mono_x11_64/Godot_v3.4-stable_mono_x11.64"
+    "godot_tools.editor_path": "/home/sjoerd/Apps/Godot/Godot_v3.4-stable_mono_x11_64/Godot_v3.4-stable_mono_x11.64",
+    "godot_tools.scene_file_config": "/home/sjoerd/Coding/Godot/Factory-Game/scenes/gameplay/World.tscn",
+
+    "files.exclude": {
+        ".import/": true,
+        ".mono/": true,
+        ".vs/": true,
+        "android/": true,
+        "obj/": true,
+        "exporting/": true,
+        "export_presets.cfg": true,
+        "The Factory Must Grow.csproj": true,
+        "The Factory Must Grow.sln": true,
+        "default_bus_layout.tres": true,
+        "default_env.tres": true,
+    },
 }

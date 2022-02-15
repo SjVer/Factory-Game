@@ -19,3 +19,8 @@ version-up:
 	\
 	echo "$$FULLOLD -> $$FULLNEW ($$OLD -> $$NEW)"; \
 	eval "sed -i 's/config\/version=\"$$FULLOLD\"/config\/version=\"$$FULLNEW\"/' project.godot";
+
+git:
+	git add --all
+	git commit -m upload
+	git push origin main

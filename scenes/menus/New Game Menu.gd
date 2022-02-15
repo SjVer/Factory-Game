@@ -32,7 +32,7 @@ func _on_ButtonCreate_pressed():
 	# find center of first chunk
 	var worldScene: Node = load("res://scenes/gameplay/World.tscn").instance()
 	var chunksize = ProjectSettings.get_setting("world/chunk/size")
-	var tilemap = worldScene.get_node("World/TileMap")
+	var tilemap = worldScene.get_node("World/Ground")
 	# savedata.player_pos = Vector2(
 	# 	chunksize * tilemap.cell_size.x * tilemap.scale.x / 2,
 	# 	chunksize * tilemap.cell_size.y * tilemap.scale.y / 2

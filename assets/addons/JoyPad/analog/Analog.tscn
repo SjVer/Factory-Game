@@ -76,19 +76,30 @@ tracks/0/keys = {
 
 [node name="Analog" type="Node2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D"
-}
 
 [node name="bg" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 3 )
+
+[node name="_bg" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -80.0
+margin_right = 80.0
+margin_bottom = 80.0
+mouse_filter = 0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ball" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=[
-"JoyStick",
-]]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["JoyStick"]]
 anims/alpha_in = SubResource( 1 )
 anims/alpha_out = SubResource( 2 )
 anims/ball_center = SubResource( 3 )

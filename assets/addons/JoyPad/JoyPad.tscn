@@ -10,7 +10,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="leftPad" type="Node2D" parent="."]
+[node name="leftPad" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="JoyStickLeft" parent="leftPad" instance=ExtResource( 2 )]
 

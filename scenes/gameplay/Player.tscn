@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/sprites/entities/player/player_static.png" type="Texture" id=1]
 [ext_resource path="res://scenes/gameplay/Player.gd" type="Script" id=2]
-[ext_resource path="res://scenes/gameplay/PlayerCamera.gd" type="Script" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 20 )
+[ext_resource path="res://scenes/gameplay/ZoomHandler.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -18,9 +15,6 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 506, 288 )
 script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
