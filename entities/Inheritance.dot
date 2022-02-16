@@ -5,7 +5,7 @@ digraph {
 	edge [arrowsize=.5]
 	rankdir="UD"
 
-	base [label="TileEntity"]
+	base [label="Entity"]
 
 		base -> static
 		static [label="StaticEntity"]
@@ -30,4 +30,10 @@ digraph {
 
 			mobile -> train
 			train [label="Train"]
+
+	inv [label="Inventory"]
+		inv -> belt
+		inv -> smelter
+		inv -> train
+		inv -> drone
 }
