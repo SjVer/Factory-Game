@@ -1,0 +1,11 @@
+﻿{
+    "Entity": {
+        "default": "DOWN",
+        "disabled": []
+    },
+
+    "BeltEntity": {
+        "default": "RIGHT",
+        "disabled": []
+    }
+}

@@ -14,5 +14,6 @@
         "The Factory Must Grow.sln": true,
         "default_bus_layout.tres": true,
         "default_env.tres": true,
+        "**/*.import": true,
     },
 }

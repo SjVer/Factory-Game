@@ -4,11 +4,11 @@
     <RootNamespace>TheFactoryMustGrow</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="entities\Inheritance.dot" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="entities\entityclasses\" />
     <Folder Include="entities\propertyclasses\" />
     <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="entities\entityclasses\rotations.json" />
   </ItemGroup>
 </Project>
